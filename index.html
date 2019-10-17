@@ -6,32 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
-/*requirements:
-
->8-128 characters
->lower case/upper case/special characters
->validate user input to make sure one at least type is selected
->write the password in the page
->bOnUs-------------------------
->button to click to copy password
-
-*/
 
 <body>
+    <div class="mcontainer">
+        <div id="headerMain">Password Generator</div>
+        <textarea class="form-contr" id="exampleFormControlTextarea1"></textarea>
 
-    <header>
-        <h1>Password Generator</h1>
-    </header>
-    <h2>Generate a Password</h2>
-    <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-    <button id="generate">Generate Password</button>
-    <button id="copy">
-        Copy to Clipboard
-    </button>
-
-
+        <button id="password-btn" class="btn btn-success">Gen Password</button>
+        <button id="copy-btn" class="btn btn-warning">Copy Password</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
