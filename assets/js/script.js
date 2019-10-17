@@ -22,21 +22,21 @@ function getPasswordOptions() {
 
   //-----------------------------verify
   if (isNaN(length)) {
-    alert("Password length must be a number");
+    alert("Password length must be a number. Please try again.");
     return;
   }
 
   if (length < 8) {
-    alert("Password length must be greater than 8");
+    alert("Password length must be greater than 8. Please try again.");
     return;
   }
 
   if (length > 128) {
-    alert("Password length must be less than 128");
+    alert("Password length must be less than 128. Please try again.");
     return;
   }
   
-  //-------------------------------ask if they want x,y,z
+  //-------------------------------ask what they want 
   var specialChars = confirm("Would you like to use special character?");
 
   var numericChars = confirm("Would you like to use numeric character?");
@@ -47,7 +47,7 @@ function getPasswordOptions() {
 
   //-------------------------------validate must choose one
   if (!specialChars && !numericChars && !uppercaseChars && !lowercaseChars) {
-    alert("You must choose at least one condition for your password. Please try again");
+    alert("At least one condition must be chosen for your password. Please try again");
     return;
   }
 
@@ -62,6 +62,12 @@ function getPasswordOptions() {
 }
 
 //-------------------------------present password
+
+
+
+
+
+
 
 
 //-------------------------------copy password
