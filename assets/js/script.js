@@ -1,53 +1,82 @@
-//----------------------------------buttons
-document.getElementById("password-btn").addEventListener("click", function () {
-  getPasswordOptions();
-});
+//-------------------------------string variables
+var specialChars = ["!#$%&\()*+,-./:;<=>?@[\]^_`{|}~"];
+var numericChars = ["0123456789"];
+var upperCaseChars = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var lowerCaseChars = ["abcdefghijklmnopqrstuvwxyz"];
+//-------------------------------empty string
+var password = "";
+var chars = "";
 
-document.getElementById("copy-btn").addEventListener("click", function () {
-  copyPassword();
-});
-
-//-------------------------------variables
-var specialChars = ['!', '"', '#', '$', '%', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'];
-var numericChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var upperCaseChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var lowerCaseChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-
-//-------------------------------ask how long they want their password to be
+//------------------------------generate password
 function getPasswordOptions() {
+  //-------------------------ask how long they want their password to be
   var length = parseInt(prompt("How many characters would you like your password to contain?")
   );
-
-  //-----------------------------verify
+  //-----------------------------verify length
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Password length must be a number. Please try again.");
     return;
   }
-
   //-------------------------------ask what they want 
-  var specialChars = confirm("Would you like to use special character?");
-  var numericChars = confirm("Would you like to use numeric character?");
-  var uppercaseChars = confirm("Would you like to use uppercase character?");
-  var lowercaseChars = confirm("Would you like to use lowercase character?");
-
+  var conspecialChars = confirm("Would you like to use special character?");
+  var connumericChars = confirm("Would you like to use numeric character?");
+  var conuppercaseChars = confirm("Would you like to use uppercase character?");
+  var conlowercaseChars = confirm("Would you like to use lowercase character?");
   //-------------------------------validate must choose one
-  if (!specialChars && !numericChars && !uppercaseChars && !lowercaseChars) {
+  if (!conspecialChars && !connumericChars && !conuppercaseChars && !conlowercaseChars) {
     alert("At least one condition must be chosen for your password. Please try again");
     return;
   }
+  //--------------------------------add choice to password
+  if (conspecialChars) {
+    password = password + (specialChars.charAt(Math.floor(Math.random() * specialChars.length)));
+    length--;
+    chars = chars + specialChars;
+  }
+  
+  if (connumericChars) {
+    password = password + (numericChars.charAt(Math.floor(Math.random() * numericChars.length)));
+    length--;
+    chars = chars + numericChars;
+  }
+  if (conuppercaseChars) {
+    password = password + (upperCaseChars.charAt(Math.floor(Math.random() * upperCaseChars.length)));
+    length--;
+    chars = chars + upperCaseChars;
+  }
+  if (conlowercaseChars) {
+    password = password + (lowerCaseChars.charAt(Math.floor(Math.random() * lowerCaseChars.length)));
+    length--;
+    chars = chars + lowerCaseChars;
+  }
+  
+  //-------------------------------4loop
+  for ( var i = 0; i < length; i++) {
+    password = password + (chars.charAt(Math.floor(Math.random() * chars.length)));
+  }
+  //-------------------------------return password
+  return password;
+}
+//----------------------------------buttons
+document.querySelector("#password-btn").addEventListener("click", function () {
+  getPasswordOptions();
+  document.querySelector("#exampleFormControlTextarea1").value = password;
+
+});  
+//-------------------------------copy password
+document.querySelector("#copy-btn").addEventListener("click", function () {
+  copyPassword();
+});  
+
+function copyPassword() {
+  
+  var copied = document.querySelector("#exampleFormControlTextarea1");
+  copied.select();
+  document.execCommand("copy");
 }
 
-//------------------------------generate password
-
-
-//-------------------------------present password
 
 
 
 
 
-
-
-
-//-------------------------------copy password
