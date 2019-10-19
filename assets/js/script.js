@@ -1,8 +1,8 @@
 //-------------------------------string variables
-var specialChars = ["!#$%&\()*+,-./:;<=>?@[\]^_`{|}~"];
-var numericChars = ["0123456789"];
-var upperCaseChars = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var lowerCaseChars = ["abcdefghijklmnopqrstuvwxyz"];
+var specialChars = "!#$%&\()*+,-./:;<=>?@[\]^_`{|}~";
+var numericChars = "0123456789";
+var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
 //-------------------------------empty string
 var password = "";
 var chars = "";
@@ -59,18 +59,19 @@ function getPasswordOptions() {
 }
 //----------------------------------buttons
 document.querySelector("#password-btn").addEventListener("click", function () {
-  getPasswordOptions();
-  document.querySelector("#exampleFormControlTextarea1").value = password;
+  password = getPasswordOptions();
+  document.querySelector("#passwordtext").value = password;
 
 });  
 //-------------------------------copy password
-document.querySelector("#copy-btn").addEventListener("click", function () {
+var cBtn = document.querySelector("#copy-btn");
+cBtn.addEventListener("click", function () {
   copyPassword();
 });  
 
 function copyPassword() {
   
-  var copied = document.querySelector("#exampleFormControlTextarea1");
+  var copied = document.querySelector("#passwordtext");
   copied.select();
   document.execCommand("copy");
 }
