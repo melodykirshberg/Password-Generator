@@ -10,7 +10,7 @@ var chars = "";
 //------------------------------generate password
 function getPasswordOptions() {
   //-------------------------ask how long they want their password to be
-  var length = parseInt(prompt("How many characters would you like your password to contain?")
+  var length = parseInt(prompt("How many characters would you like your password to contain? (8 --- 128)")
   );
   //-----------------------------verify length
   if (isNaN(length) || length < 8 || length > 128) {
