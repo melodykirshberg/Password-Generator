@@ -16,33 +16,19 @@ var lowerCaseChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'
 
 //-------------------------------ask how long they want their password to be
 function getPasswordOptions() {
-  var length = parseInt(
-    prompt("How many characters would you like your password to contain?")
+  var length = parseInt(prompt("How many characters would you like your password to contain?")
   );
 
   //-----------------------------verify
-  if (isNaN(length)) {
+  if (isNaN(length) || length < 8 || length > 128) {
     alert("Password length must be a number. Please try again.");
     return;
   }
 
-  if (length < 8) {
-    alert("Password length must be greater than 8. Please try again.");
-    return;
-  }
-
-  if (length > 128) {
-    alert("Password length must be less than 128. Please try again.");
-    return;
-  }
-  
   //-------------------------------ask what they want 
   var specialChars = confirm("Would you like to use special character?");
-
   var numericChars = confirm("Would you like to use numeric character?");
-
   var uppercaseChars = confirm("Would you like to use uppercase character?");
-
   var lowercaseChars = confirm("Would you like to use lowercase character?");
 
   //-------------------------------validate must choose one
@@ -50,16 +36,10 @@ function getPasswordOptions() {
     alert("At least one condition must be chosen for your password. Please try again");
     return;
   }
-
-  var passwordOptions = {
-    specialChars: specialChars,
-    numericChars: numericChars,
-    uppercaseChars: uppercaseChars,
-    lowercaseChars: lowercaseChars
-  };
-
-  return passwordOptions;
 }
+
+//------------------------------generate password
+
 
 //-------------------------------present password
 
