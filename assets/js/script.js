@@ -9,6 +9,8 @@ var chars = "";
 
 //------------------------------generate password
 function getPasswordOptions() {
+  password = "";
+
   //-------------------------ask how long they want their password to be
   var length = parseInt(prompt("How many characters would you like your password to contain? (8 --- 128)")
   );
@@ -28,6 +30,7 @@ function getPasswordOptions() {
     return;
   }
   //--------------------------------add choice to password
+  
   if (conspecialChars) {
     password = password + (specialChars.charAt(Math.floor(Math.random() * specialChars.length)));
     length--;
@@ -60,6 +63,7 @@ function getPasswordOptions() {
 //----------------------------------buttons
 document.querySelector("#password-btn").addEventListener("click", function () {
   password = getPasswordOptions();
+  document.querySelector("#passwordtext").value = "";
   document.querySelector("#passwordtext").value = password;
 
 });  
@@ -70,7 +74,6 @@ cBtn.addEventListener("click", function () {
 });  
 
 function copyPassword() {
-  
   var copied = document.querySelector("#passwordtext");
   copied.select();
   document.execCommand("copy");
