@@ -1,19 +1,23 @@
 # Password-Generator
 
-## Table Of Contents
+## Description
+This is an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. 
+
+## Table of Contents
 * [Installation](#installation)
-* [Description](#description)
+* [Screenshot](#screenshot)
 * [Credits](#credits)
 
 ## Installation
-* Get the code:
-```git clone https://verlitas.github.io/Password-Generator.git```
+In your terminal type:
+```git clone https://github.com/verlitas/Password-Generator.git```
 * Open in Visual Studio to build and run.
+* For further instructions, visit https://help.github.com.
 
-## Description
-I created an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by my JavaScript code. 
+## Screenshot
+![alt text](screenshot/sspg.png "Screenshot")
+
 
 ## Credits
-University of Arizona Bootcamp
-
+[UABootCamp](https://bootcamp.ce.arizona.edu/coding/)
 
