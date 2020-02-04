@@ -5,8 +5,8 @@ This is an application that generates a random password based on user-selected c
 
 ## Table of Contents
 * [Installation](#installation)
-* [Screenshot](#screenshot)
 * [Technologies-Libraries](#technologies-libraries)
+* [Demo](#demo)
 * [Credits](#credits)
 
 ## Installation
@@ -18,9 +18,12 @@ In your terminal type:
 ## Technologies-Libraries
 CSS - HTML - Bootstrap - JavaScript
 
-## Screenshot
+## Demo
 ![alt text](screenshot/sspg.png "Screenshot")
 
+Live link: https://verlitas.github.io/Password-Generator/
+
 ## Credits
+[Melody Kirshberg](https://github.com/verlitas)  
 [UABootCamp](https://bootcamp.ce.arizona.edu/coding/)
 
